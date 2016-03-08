@@ -243,11 +243,11 @@ class FuzzyFinderView extends SelectListView
       [rootPath, projectRelativePath] = atom.project.relativizePath(filePath)
       if rootPath and projectHasMultipleDirectories
         projectRelativePath = path.join(path.basename(rootPath), projectRelativePath)
-      if repo = repositoryForPath(filePath)
-        repo.getCachedPathStatus(filePath).then (status) ->
-          {filePath, projectRelativePath, status}
-      else
-        Promise.resolve({filePath, projectRelativePath})
+      # if repo = repositoryForPath(filePath)
+      #   repo.getCachedPathStatus(filePath).then (status) ->
+      #     {filePath, projectRelativePath, status}
+      # else
+      Promise.resolve({filePath, projectRelativePath})
     Promise.all(promises)
 
   show: ->
